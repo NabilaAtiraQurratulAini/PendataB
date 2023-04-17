@@ -140,8 +140,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/foto.jpg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/foto.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/profil.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/profil.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
   
 </a></div>
@@ -331,7 +331,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -347,6 +349,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes"><strong>NAIVE BAYES</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#knn"><strong>KNN</strong></a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -358,9 +369,8 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="uts-analisa-data-klasifikasi">
 <h1><strong>UTS - ANALISA DATA KLASIFIKASI</strong><a class="headerlink" href="#uts-analisa-data-klasifikasi" title="Permalink to this heading">#</a></h1>
-<p>Nabila Atira Qurratul Aini</p>
-<p>210411100066</p>
-<p><strong>NAIVE BAYES</strong></p>
+<div class="section" id="naive-bayes">
+<h2><strong>NAIVE BAYES</strong><a class="headerlink" href="#naive-bayes" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -379,7 +389,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-6d489752-c4e5-4750-b41a-283707575cc6">
+  <div id="df-a3c9ff57-a52d-4d56-b263-9d8d9590927d">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -480,7 +490,7 @@ document.write(`
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-6d489752-c4e5-4750-b41a-283707575cc6')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-a3c9ff57-a52d-4d56-b263-9d8d9590927d')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -531,12 +541,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-6d489752-c4e5-4750-b41a-283707575cc6 button.colab-df-convert');
+          document.querySelector('#df-a3c9ff57-a52d-4d56-b263-9d8d9590927d button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-6d489752-c4e5-4750-b41a-283707575cc6');
+          const element = document.querySelector('#df-a3c9ff57-a52d-4d56-b263-9d8d9590927d');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -687,9 +697,9 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-     <input type="file" id="files-4b14fe4c-6775-44d4-b79e-c73908336cf2" name="files[]" multiple disabled
+     <input type="file" id="files-62732e14-541d-47be-aca9-c552de565262" name="files[]" multiple disabled
         style="border:none" />
-     <output id="result-4b14fe4c-6775-44d4-b79e-c73908336cf2">
+     <output id="result-62732e14-541d-47be-aca9-c552de565262">
       Upload widget is only available when the cell has been executed in the
       current browser session. Please rerun this cell to enable.
       </output>
@@ -970,7 +980,9 @@ scope.google.colab._files = {
 </div>
 </div>
 </div>
-<p><strong>KNN</strong></p>
+</div>
+<div class="section" id="knn">
+<h2><strong>KNN</strong><a class="headerlink" href="#knn" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1721,6 +1733,7 @@ Accuracy: 0.7272727272727273
 </div>
 </div>
 </div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -1780,6 +1793,21 @@ Accuracy: 0.7272727272727273
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes"><strong>NAIVE BAYES</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#knn"><strong>KNN</strong></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
