@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DECISION TREE CLASSIFIER DATA WEATHER &#8212; My Jupyter Book</title>
+    <title>DECISION TREE CLASSIFIER DATA WEATHER &#8212; My sample book</title>
   
   
   
@@ -134,8 +134,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+    
+    
+      
+    
+    
+    <img src="../_static/gambar.jpeg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/gambar.jpeg" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
-    <p class="title logo__title">My Jupyter Book</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -195,6 +201,53 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="header-article-item">
 
 <div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FTugas/DataWeather.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
 
 
 
@@ -405,7 +458,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-2fd576d3-5364-4147-bc61-bb12c2aad4f9">
+  <div id="df-0f05a19e-78bb-4e01-aab4-df6dc3e6fd56">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -623,7 +676,7 @@ document.write(`
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-2fd576d3-5364-4147-bc61-bb12c2aad4f9')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-0f05a19e-78bb-4e01-aab4-df6dc3e6fd56')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -674,12 +727,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-2fd576d3-5364-4147-bc61-bb12c2aad4f9 button.colab-df-convert');
+          document.querySelector('#df-0f05a19e-78bb-4e01-aab4-df6dc3e6fd56 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-2fd576d3-5364-4147-bc61-bb12c2aad4f9');
+          const element = document.querySelector('#df-0f05a19e-78bb-4e01-aab4-df6dc3e6fd56');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -747,22 +800,22 @@ edge [fontname=&quot;helvetica&quot;] ;
 4 -&gt; 5 ;
 6 [label=&quot;gini = 0.0\nsamples = 1\nvalue = [0, 1]&quot;] ;
 4 -&gt; 6 ;
-7 [label=&quot;x[8] &lt;= 0.5\ngini = 0.32\nsamples = 5\nvalue = [1, 4]&quot;] ;
+7 [label=&quot;x[9] &lt;= 0.5\ngini = 0.32\nsamples = 5\nvalue = [1, 4]&quot;] ;
 1 -&gt; 7 ;
-8 [label=&quot;x[1] &lt;= 0.5\ngini = 0.5\nsamples = 2\nvalue = [1, 1]&quot;] ;
+8 [label=&quot;gini = 0.0\nsamples = 3\nvalue = [0, 3]&quot;] ;
 7 -&gt; 8 ;
-9 [label=&quot;gini = 0.0\nsamples = 1\nvalue = [0, 1]&quot;] ;
-8 -&gt; 9 ;
-10 [label=&quot;gini = 0.0\nsamples = 1\nvalue = [1, 0]&quot;] ;
-8 -&gt; 10 ;
-11 [label=&quot;gini = 0.0\nsamples = 3\nvalue = [0, 3]&quot;] ;
-7 -&gt; 11 ;
+9 [label=&quot;x[3] &lt;= 0.5\ngini = 0.5\nsamples = 2\nvalue = [1, 1]&quot;] ;
+7 -&gt; 9 ;
+10 [label=&quot;gini = 0.0\nsamples = 1\nvalue = [0, 1]&quot;] ;
+9 -&gt; 10 ;
+11 [label=&quot;gini = 0.0\nsamples = 1\nvalue = [1, 0]&quot;] ;
+9 -&gt; 11 ;
 12 [label=&quot;gini = 0.0\nsamples = 4\nvalue = [0, 4]&quot;] ;
 0 -&gt; 12 [labeldistance=2.5, labelangle=-45, headlabel=&quot;False&quot;] ;
 }
 </pre></div>
 </div>
-<img alt="../_images/a907934e11e6f3bf0fa5497bb9b69b6ec247685e4ea20773fc12f648c5881459.png" src="../_images/a907934e11e6f3bf0fa5497bb9b69b6ec247685e4ea20773fc12f648c5881459.png" />
+<img alt="../_images/af9b09a1bee05d3877aeffc1ce9693265d144dbfbcc80d752d01e65692061bcd.png" src="../_images/af9b09a1bee05d3877aeffc1ce9693265d144dbfbcc80d752d01e65692061bcd.png" />
 </div>
 </div>
 <p>Terakhir namun tidak kalah pentingnya, buat prediksi, dengan memasukkan Outlook sebagai ‘cerah’, Suhu sebagai ‘panas’, Kelembaban sebagai ‘normal’ dan Windy sebagai ‘salah’. Model memperkirakan masukan itu adalah ‘ya’, artinya pegolf akan bermain golf hari itu. Program selesai! Tentu saja ini hanyalah contoh sederhana dari Pengklasifikasi Pohon Keputusan. Pada kenyataannya Anda kemungkinan besar akan mengunggah kumpulan data alih-alih membuatnya, lalu membersihkan dan menjelajahi data, lalu membagi data Anda menjadi kumpulan pelatihan dan rangkaian pengujian dan menguji akurasi model Anda menggunakan beberapa metrik statistik.</p>
@@ -862,7 +915,7 @@ edge [fontname=&quot;helvetica&quot;] ;
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book community
+By Nabila Atira Qurratul Aini
 </p>
 
   </div>
