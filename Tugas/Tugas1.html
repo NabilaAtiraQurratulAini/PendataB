@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MENGIMPOR DATA IRIS KE POSTGRESQL &#8212; Pendata B</title>
+    <title>MENGIMPOR DATA IRIS KE POSTGRESQL &#8212; My Jupyter Book</title>
   
   
   
@@ -135,14 +135,8 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
-    
-    
-      
-    
-    
-    <img src="../_static/profil.jpg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/profil.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
+    <p class="title logo__title">My Jupyter Book</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -202,53 +196,6 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="header-article-item">
 
 <div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="btn__text-container">Repository</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FTugas/Tugas1.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">Open issue</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
 
 
 
@@ -370,7 +317,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
-Requirement already satisfied: psycopg2 in /usr/local/lib/python3.9/dist-packages (2.9.6)
+Requirement already satisfied: psycopg2 in /usr/local/lib/python3.10/dist-packages (2.9.6)
 </pre></div>
 </div>
 </div>
@@ -383,11 +330,11 @@ Requirement already satisfied: psycopg2 in /usr/local/lib/python3.9/dist-package
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
-Requirement already satisfied: pandas in /usr/local/lib/python3.9/dist-packages (1.5.3)
-Requirement already satisfied: numpy&gt;=1.20.3 in /usr/local/lib/python3.9/dist-packages (from pandas) (1.22.4)
-Requirement already satisfied: pytz&gt;=2020.1 in /usr/local/lib/python3.9/dist-packages (from pandas) (2022.7.1)
-Requirement already satisfied: python-dateutil&gt;=2.8.1 in /usr/local/lib/python3.9/dist-packages (from pandas) (2.8.2)
-Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.9/dist-packages (from python-dateutil&gt;=2.8.1-&gt;pandas) (1.16.0)
+Requirement already satisfied: pandas in /usr/local/lib/python3.10/dist-packages (1.5.3)
+Requirement already satisfied: python-dateutil&gt;=2.8.1 in /usr/local/lib/python3.10/dist-packages (from pandas) (2.8.2)
+Requirement already satisfied: pytz&gt;=2020.1 in /usr/local/lib/python3.10/dist-packages (from pandas) (2022.7.1)
+Requirement already satisfied: numpy&gt;=1.21.0 in /usr/local/lib/python3.10/dist-packages (from pandas) (1.22.4)
+Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.10/dist-packages (from python-dateutil&gt;=2.8.1-&gt;pandas) (1.16.0)
 </pre></div>
 </div>
 </div>
@@ -420,7 +367,7 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.9/dist-pack
 <span class="g g-Whitespace">      </span><span class="mi">4</span>                    <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span>                    <span class="n">port</span> <span class="o">=</span> <span class="s2">&quot;5432&quot;</span><span class="p">)</span>
 
-<span class="nn">/usr/local/lib/python3.9/dist-packages/psycopg2/__init__.py</span> in <span class="ni">connect</span><span class="nt">(dsn, connection_factory, cursor_factory, **kwargs)</span>
+<span class="nn">/usr/local/lib/python3.10/dist-packages/psycopg2/__init__.py</span> in <span class="ni">connect</span><span class="nt">(dsn, connection_factory, cursor_factory, **kwargs)</span>
 <span class="g g-Whitespace">    </span><span class="mi">120</span> 
 <span class="g g-Whitespace">    </span><span class="mi">121</span>     <span class="n">dsn</span> <span class="o">=</span> <span class="n">_ext</span><span class="o">.</span><span class="n">make_dsn</span><span class="p">(</span><span class="n">dsn</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 <span class="ne">--&gt; </span><span class="mi">122</span>     <span class="n">conn</span> <span class="o">=</span> <span class="n">_connect</span><span class="p">(</span><span class="n">dsn</span><span class="p">,</span> <span class="n">connection_factory</span><span class="o">=</span><span class="n">connection_factory</span><span class="p">,</span> <span class="o">**</span><span class="n">kwasync</span><span class="p">)</span>
@@ -648,7 +595,7 @@ Connection successful
   <div class="footer-item">
     
 <p class="component-author">
-By Nabila Atira Qurratul Aini
+By The Jupyter Book community
 </p>
 
   </div>
