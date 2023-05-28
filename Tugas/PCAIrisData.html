@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; My sample book</title>
+    <title>PCA IRIS DATASET &#8212; My sample book</title>
   
   
   
@@ -60,7 +60,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Tugas/PCAIrisDataset';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Tugas/PCAIrisData';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="DECISION TREE CLASSIFIER DATA WEATHER" href="DataWeather.html" />
@@ -154,12 +154,13 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Tugas1.html"><strong>MENGIMPOR DATA IRIS KE POSTGRESQL</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="ImportPowerBI.html"><strong>LANGKAH-LANGKAH MENGIMPOR DATA IRIS KE ELEPHANTSQL, POSTGRESQL, MYSQL, dan POWER BI</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="NaiveBayes.html"><strong>DASAR-DASAR PEMBELAJARAN MESIN : KLASIFIKASI NAIVE BAYES</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="UTS.html"><strong>UTS - ANALISA DATA KLASIFIKASI</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="DataWeather.html"><strong>DECISION TREE CLASSIFIER DATA WEATHER</strong></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>PCA IRIS DATASET</strong></a></li>
 </ul>
 
     </div>
@@ -231,7 +232,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FTugas/PCAIrisDataset.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FTugas/PCAIrisData.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -261,7 +262,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/Tugas/PCAIrisDataset.ipynb" target="_blank"
+      <li><a href="../_sources/Tugas/PCAIrisData.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -330,9 +331,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -343,19 +342,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>PCA IRIS DATASET</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -365,7 +356,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="cell docutils container">
+  <div class="tex2jax_ignore mathjax_ignore section" id="pca-iris-dataset">
+<h1><strong>PCA IRIS DATASET</strong><a class="headerlink" href="#pca-iris-dataset" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -384,7 +377,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-40754312-1d1f-4981-8443-2ff03ddf1383">
+  <div id="df-9090f132-a7d2-41b1-91a3-afeb95d8294f">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -455,7 +448,7 @@ document.write(`
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-40754312-1d1f-4981-8443-2ff03ddf1383')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-9090f132-a7d2-41b1-91a3-afeb95d8294f')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -506,12 +499,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-40754312-1d1f-4981-8443-2ff03ddf1383 button.colab-df-convert');
+          document.querySelector('#df-9090f132-a7d2-41b1-91a3-afeb95d8294f button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-40754312-1d1f-4981-8443-2ff03ddf1383');
+          const element = document.querySelector('#df-9090f132-a7d2-41b1-91a3-afeb95d8294f');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -886,6 +879,7 @@ Eigenvelues
 <img alt="../_images/6bf032ff67981ed3dde0e07eafb2c0bb3629eca07825defdaa0be68e7de2281e.png" src="../_images/6bf032ff67981ed3dde0e07eafb2c0bb3629eca07825defdaa0be68e7de2281e.png" />
 </div>
 </div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -936,20 +930,6 @@ Eigenvelues
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-  </nav></div>
-
-</div></div>
               
             
           </div>
