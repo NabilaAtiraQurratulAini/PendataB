@@ -331,7 +331,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -347,6 +349,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes"><strong>NAIVE BAYES</strong></a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -358,6 +368,141 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="pca-iris-dataset">
 <h1><strong>PCA IRIS DATASET</strong><a class="headerlink" href="#pca-iris-dataset" title="Permalink to this heading">#</a></h1>
+<div class="section" id="naive-bayes">
+<h2><strong>NAIVE BAYES</strong><a class="headerlink" href="#naive-bayes" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/NabilaAtiraQurratulAini/PendataB/gh-pages/Tugas/iris&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">HTTPError</span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-2-eda2a2bd9a53&gt;</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/NabilaAtiraQurratulAini/PendataB/gh-pages/Tugas/iris&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/pandas/util/_decorators.py</span> in <span class="ni">wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">209</span>                 <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">210</span>                     <span class="n">kwargs</span><span class="p">[</span><span class="n">new_arg_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_arg_value</span>
+<span class="ne">--&gt; </span><span class="mi">211</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">212</span> 
+<span class="g g-Whitespace">    </span><span class="mi">213</span>         <span class="k">return</span> <span class="n">cast</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">wrapper</span><span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/pandas/util/_decorators.py</span> in <span class="ni">wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">329</span>                     <span class="n">stacklevel</span><span class="o">=</span><span class="n">find_stack_level</span><span class="p">(),</span>
+<span class="g g-Whitespace">    </span><span class="mi">330</span>                 <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">331</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">332</span> 
+<span class="g g-Whitespace">    </span><span class="mi">333</span>         <span class="c1"># error: &quot;Callable[[VarArg(Any), KwArg(Any)], Any]&quot; has no</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/pandas/io/parsers/readers.py</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, error_bad_lines, warn_bad_lines, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">948</span>     <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">949</span> 
+<span class="ne">--&gt; </span><span class="mi">950</span>     <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">951</span> 
+<span class="g g-Whitespace">    </span><span class="mi">952</span> 
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/pandas/io/parsers/readers.py</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">603</span> 
+<span class="g g-Whitespace">    </span><span class="mi">604</span>     <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">605</span>     <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">606</span> 
+<span class="g g-Whitespace">    </span><span class="mi">607</span>     <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/pandas/io/parsers/readers.py</span> in <span class="ni">__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1440</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1441</span>         <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="ne">-&gt; </span><span class="mi">1442</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1443</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1444</span>     <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/pandas/io/parsers/readers.py</span> in <span class="ni">_make_engine</span><span class="nt">(self, f, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1733</span>                 <span class="k">if</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1734</span>                     <span class="n">mode</span> <span class="o">+=</span> <span class="s2">&quot;b&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1735</span>             <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1736</span>                 <span class="n">f</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1737</span>                 <span class="n">mode</span><span class="p">,</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/pandas/io/common.py</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">711</span> 
+<span class="g g-Whitespace">    </span><span class="mi">712</span>     <span class="c1"># open URLs</span>
+<span class="ne">--&gt; </span><span class="mi">713</span>     <span class="n">ioargs</span> <span class="o">=</span> <span class="n">_get_filepath_or_buffer</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">714</span>         <span class="n">path_or_buf</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">715</span>         <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/pandas/io/common.py</span> in <span class="ni">_get_filepath_or_buffer</span><span class="nt">(filepath_or_buffer, encoding, compression, mode, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">361</span>         <span class="c1"># assuming storage_options is to be interpreted as headers</span>
+<span class="g g-Whitespace">    </span><span class="mi">362</span>         <span class="n">req_info</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">storage_options</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">363</span>         <span class="k">with</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">req_info</span><span class="p">)</span> <span class="k">as</span> <span class="n">req</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">364</span>             <span class="n">content_encoding</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Content-Encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">365</span>             <span class="k">if</span> <span class="n">content_encoding</span> <span class="o">==</span> <span class="s2">&quot;gzip&quot;</span><span class="p">:</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/pandas/io/common.py</span> in <span class="ni">urlopen</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">263</span>     <span class="kn">import</span> <span class="nn">urllib.request</span>
+<span class="g g-Whitespace">    </span><span class="mi">264</span> 
+<span class="ne">--&gt; </span><span class="mi">265</span>     <span class="k">return</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">266</span> 
+<span class="g g-Whitespace">    </span><span class="mi">267</span> 
+
+<span class="nn">/usr/lib/python3.10/urllib/request.py</span> in <span class="ni">urlopen</span><span class="nt">(url, data, timeout, cafile, capath, cadefault, context)</span>
+<span class="g g-Whitespace">    </span><span class="mi">214</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">215</span>         <span class="n">opener</span> <span class="o">=</span> <span class="n">_opener</span>
+<span class="ne">--&gt; </span><span class="mi">216</span>     <span class="k">return</span> <span class="n">opener</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">217</span> 
+<span class="g g-Whitespace">    </span><span class="mi">218</span> <span class="k">def</span> <span class="nf">install_opener</span><span class="p">(</span><span class="n">opener</span><span class="p">):</span>
+
+<span class="nn">/usr/lib/python3.10/urllib/request.py</span> in <span class="ni">open</span><span class="nt">(self, fullurl, data, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">523</span>         <span class="k">for</span> <span class="n">processor</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">protocol</span><span class="p">,</span> <span class="p">[]):</span>
+<span class="g g-Whitespace">    </span><span class="mi">524</span>             <span class="n">meth</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">processor</span><span class="p">,</span> <span class="n">meth_name</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">525</span>             <span class="n">response</span> <span class="o">=</span> <span class="n">meth</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">526</span> 
+<span class="g g-Whitespace">    </span><span class="mi">527</span>         <span class="k">return</span> <span class="n">response</span>
+
+<span class="nn">/usr/lib/python3.10/urllib/request.py</span> in <span class="ni">http_response</span><span class="nt">(self, request, response)</span>
+<span class="g g-Whitespace">    </span><span class="mi">632</span>         <span class="c1"># request was successfully received, understood, and accepted.</span>
+<span class="g g-Whitespace">    </span><span class="mi">633</span>         <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mi">200</span> <span class="o">&lt;=</span> <span class="n">code</span> <span class="o">&lt;</span> <span class="mi">300</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">634</span>             <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">635</span>                 <span class="s1">&#39;http&#39;</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">636</span> 
+
+<span class="nn">/usr/lib/python3.10/urllib/request.py</span> in <span class="ni">error</span><span class="nt">(self, proto, *args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">561</span>         <span class="k">if</span> <span class="n">http_err</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">562</span>             <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="nb">dict</span><span class="p">,</span> <span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="s1">&#39;http_error_default&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">orig_args</span>
+<span class="ne">--&gt; </span><span class="mi">563</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_chain</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">564</span> 
+<span class="g g-Whitespace">    </span><span class="mi">565</span> <span class="c1"># XXX probably also want an abstract factory that knows when it makes</span>
+
+<span class="nn">/usr/lib/python3.10/urllib/request.py</span> in <span class="ni">_call_chain</span><span class="nt">(self, chain, kind, meth_name, *args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">494</span>         <span class="k">for</span> <span class="n">handler</span> <span class="ow">in</span> <span class="n">handlers</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">495</span>             <span class="n">func</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="n">meth_name</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">496</span>             <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">497</span>             <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">498</span>                 <span class="k">return</span> <span class="n">result</span>
+
+<span class="nn">/usr/lib/python3.10/urllib/request.py</span> in <span class="ni">http_error_default</span><span class="nt">(self, req, fp, code, msg, hdrs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">641</span> <span class="k">class</span> <span class="nc">HTTPDefaultErrorHandler</span><span class="p">(</span><span class="n">BaseHandler</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">642</span>     <span class="k">def</span> <span class="nf">http_error_default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">req</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">643</span>         <span class="k">raise</span> <span class="n">HTTPError</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">full_url</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">,</span> <span class="n">fp</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">644</span> 
+<span class="g g-Whitespace">    </span><span class="mi">645</span> <span class="k">class</span> <span class="nc">HTTPRedirectHandler</span><span class="p">(</span><span class="n">BaseHandler</span><span class="p">):</span>
+
+<span class="ne">HTTPError</span>: HTTP Error 404: Not Found
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -377,7 +522,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-84109640-53da-4e6d-95e8-2f37bf986946">
+  <div id="df-73e19f72-a36e-4df3-af74-2f7269f33917">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -448,7 +593,7 @@ document.write(`
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-84109640-53da-4e6d-95e8-2f37bf986946')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-73e19f72-a36e-4df3-af74-2f7269f33917')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -499,12 +644,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-84109640-53da-4e6d-95e8-2f37bf986946 button.colab-df-convert');
+          document.querySelector('#df-73e19f72-a36e-4df3-af74-2f7269f33917 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-84109640-53da-4e6d-95e8-2f37bf986946');
+          const element = document.querySelector('#df-73e19f72-a36e-4df3-af74-2f7269f33917');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -606,10 +751,10 @@ Name: class, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Covariance Matrix 
-[[ 1.00671141 -0.11010327  0.87760486  0.82344326]
- [-0.11010327  1.00671141 -0.42333835 -0.358937  ]
- [ 0.87760486 -0.42333835  1.00671141  0.96921855]
- [ 0.82344326 -0.358937    0.96921855  1.00671141]]
+[[ 1.00671141 -0.11835884  0.87760447  0.82343066]
+ [-0.11835884  1.00671141 -0.43131554 -0.36858315]
+ [ 0.87760447 -0.43131554  1.00671141  0.96932762]
+ [ 0.82343066 -0.36858315  0.96932762  1.00671141]]
 </pre></div>
 </div>
 </div>
@@ -622,10 +767,10 @@ Name: class, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Numpy Covariance matrix 
-[[ 1.00671141 -0.11010327  0.87760486  0.82344326]
- [-0.11010327  1.00671141 -0.42333835 -0.358937  ]
- [ 0.87760486 -0.42333835  1.00671141  0.96921855]
- [ 0.82344326 -0.358937    0.96921855  1.00671141]]
+[[ 1.00671141 -0.11835884  0.87760447  0.82343066]
+ [-0.11835884  1.00671141 -0.43131554 -0.36858315]
+ [ 0.87760447 -0.43131554  1.00671141  0.96932762]
+ [ 0.82343066 -0.36858315  0.96932762  1.00671141]]
 </pre></div>
 </div>
 </div>
@@ -643,12 +788,12 @@ Name: class, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eigenvectors 
-[[ 0.52237162 -0.37231836 -0.72101681  0.26199559]
- [-0.26335492 -0.92555649  0.24203288 -0.12413481]
- [ 0.58125401 -0.02109478  0.14089226 -0.80115427]
- [ 0.56561105 -0.06541577  0.6338014   0.52354627]]
+[[ 0.52106591 -0.37741762 -0.71956635  0.26128628]
+ [-0.26934744 -0.92329566  0.24438178 -0.12350962]
+ [ 0.5804131  -0.02449161  0.14212637 -0.80144925]
+ [ 0.56485654 -0.06694199  0.63427274  0.52359713]]
 Eigenvelues 
-[2.93035378 0.92740362 0.14834223 0.02074601]
+[2.93808505 0.9201649  0.14774182 0.02085386]
 </pre></div>
 </div>
 </div>
@@ -666,12 +811,12 @@ Eigenvelues
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eigenvectors 
-[[ 0.52237162 -0.37231836 -0.72101681  0.26199559]
- [-0.26335492 -0.92555649  0.24203288 -0.12413481]
- [ 0.58125401 -0.02109478  0.14089226 -0.80115427]
- [ 0.56561105 -0.06541577  0.6338014   0.52354627]]
+[[ 0.52106591 -0.37741762 -0.71956635  0.26128628]
+ [-0.26934744 -0.92329566  0.24438178 -0.12350962]
+ [ 0.5804131  -0.02449161  0.14212637 -0.80144925]
+ [ 0.56485654 -0.06694199  0.63427274  0.52359713]]
 Eigenvelues 
-[2.91081808 0.92122093 0.14735328 0.02060771]
+[2.91849782 0.91403047 0.14675688 0.02071484]
 </pre></div>
 </div>
 </div>
@@ -688,12 +833,12 @@ Eigenvelues
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eigenvectors 
-[[ 0.52237162 -0.37231836 -0.72101681  0.26199559]
- [-0.26335492 -0.92555649  0.24203288 -0.12413481]
- [ 0.58125401 -0.02109478  0.14089226 -0.80115427]
- [ 0.56561105 -0.06541577  0.6338014   0.52354627]]
+[[ 0.52106591 -0.37741762 -0.71956635  0.26128628]
+ [-0.26934744 -0.92329566  0.24438178 -0.12350962]
+ [ 0.5804131  -0.02449161  0.14212637 -0.80144925]
+ [ 0.56485654 -0.06694199  0.63427274  0.52359713]]
 Eigenvelues 
-[2.91081808 0.92122093 0.14735328 0.02060771]
+[2.91849782 0.91403047 0.14675688 0.02071484]
 </pre></div>
 </div>
 </div>
@@ -706,10 +851,10 @@ Eigenvelues
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.52237162, -0.37231836,  0.72101681,  0.26199559],
-       [ 0.26335492, -0.92555649, -0.24203288, -0.12413481],
-       [-0.58125401, -0.02109478, -0.14089226, -0.80115427],
-       [-0.56561105, -0.06541577, -0.6338014 ,  0.52354627]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.52106591, -0.37741762,  0.71956635,  0.26128628],
+       [ 0.26934744, -0.92329566, -0.24438178, -0.12350962],
+       [-0.5804131 , -0.02449161, -0.14212637, -0.80144925],
+       [-0.56485654, -0.06694199, -0.63427274,  0.52359713]])
 </pre></div>
 </div>
 </div>
@@ -745,10 +890,10 @@ Eigenvelues
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eigenvalues in descending order:
-2.9108180837520528
-0.9212209307072249
-0.1473532783050959
-0.020607707235624884
+2.9184978165319952
+0.9140304714680695
+0.1467568755713151
+0.020714836428618984
 </pre></div>
 </div>
 </div>
@@ -779,7 +924,7 @@ Eigenvelues
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5a22adbcf107f11561704526eef1f6315049b8af580666e8b100fb54e2835c85.png" src="../_images/5a22adbcf107f11561704526eef1f6315049b8af580666e8b100fb54e2835c85.png" />
+<img alt="../_images/16adee83ec87bc071a8a575358a9e3f7a92f43c976534a4e8942a6d1af1cef93.png" src="../_images/16adee83ec87bc071a8a575358a9e3f7a92f43c976534a4e8942a6d1af1cef93.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -793,10 +938,10 @@ Eigenvelues
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matrix W:
- [[ 0.52237162 -0.37231836]
- [-0.26335492 -0.92555649]
- [ 0.58125401 -0.02109478]
- [ 0.56561105 -0.06541577]]
+ [[ 0.52106591 -0.37741762]
+ [-0.26934744 -0.92329566]
+ [ 0.5804131  -0.02449161]
+ [ 0.56485654 -0.06694199]]
 </pre></div>
 </div>
 </div>
@@ -827,7 +972,7 @@ Eigenvelues
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4f1199ef4ca92ba2c6ae114328fc703c257e096984580b8c33cacf18affacf43.png" src="../_images/4f1199ef4ca92ba2c6ae114328fc703c257e096984580b8c33cacf18affacf43.png" />
+<img alt="../_images/0630c50c8ef3f3a639614922165a3c5bebd7b9677d4b63d2a3ff87248b091261.png" src="../_images/0630c50c8ef3f3a639614922165a3c5bebd7b9677d4b63d2a3ff87248b091261.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -858,7 +1003,8 @@ Eigenvelues
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5b400d715a0e45c6dab0607db443a92d7335c64057aae4b1764a767902d71045.png" src="../_images/5b400d715a0e45c6dab0607db443a92d7335c64057aae4b1764a767902d71045.png" />
+<img alt="../_images/6bf032ff67981ed3dde0e07eafb2c0bb3629eca07825defdaa0be68e7de2281e.png" src="../_images/6bf032ff67981ed3dde0e07eafb2c0bb3629eca07825defdaa0be68e7de2281e.png" />
+</div>
 </div>
 </div>
 </div>
@@ -912,6 +1058,20 @@ Eigenvelues
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes"><strong>NAIVE BAYES</strong></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
