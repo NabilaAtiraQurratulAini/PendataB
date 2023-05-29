@@ -1,7 +1,8 @@
-# Welcome to your Jupyter Book
+Nabila Atira Qurratul Aini
+210411100066
+# PENAMBANGAN DATA
 
-This is a small sample book to give you a feel for how book content is
-structured.
+Penambangan data adalah ekstraksi pola yang menarik dari data dalam jumlah besar.
 It shows off a few of the major file types, as well as some sample content.
 It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
 

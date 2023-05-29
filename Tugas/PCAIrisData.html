@@ -150,7 +150,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    Welcome to your Jupyter Book
+                    PENAMBANGAN DATA
                 </a>
             </li>
         </ul>
@@ -370,14 +370,14 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://gist.githubusercontent.com/netj/8836201/raw/6f9306ad21398ea43cba4f7d537619d0e07d5ae3/iris.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/NabilaAtiraQurratulAini/PendataB/gh-pages/Tugas/iris&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-9090f132-a7d2-41b1-91a3-afeb95d8294f">
+  <div id="df-84109640-53da-4e6d-95e8-2f37bf986946">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -397,11 +397,11 @@ document.write(`
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>sepal.length</th>
-      <th>sepal.width</th>
-      <th>petal.length</th>
-      <th>petal.width</th>
-      <th>variety</th>
+      <th>sepal_l</th>
+      <th>sepal_w</th>
+      <th>petal_l</th>
+      <th>petal_w</th>
+      <th>class</th>
     </tr>
   </thead>
   <tbody>
@@ -411,7 +411,7 @@ document.write(`
       <td>3.5</td>
       <td>1.4</td>
       <td>0.2</td>
-      <td>Setosa</td>
+      <td>Iris-setosa</td>
     </tr>
     <tr>
       <th>1</th>
@@ -419,7 +419,7 @@ document.write(`
       <td>3.0</td>
       <td>1.4</td>
       <td>0.2</td>
-      <td>Setosa</td>
+      <td>Iris-setosa</td>
     </tr>
     <tr>
       <th>2</th>
@@ -427,7 +427,7 @@ document.write(`
       <td>3.2</td>
       <td>1.3</td>
       <td>0.2</td>
-      <td>Setosa</td>
+      <td>Iris-setosa</td>
     </tr>
     <tr>
       <th>3</th>
@@ -435,7 +435,7 @@ document.write(`
       <td>3.1</td>
       <td>1.5</td>
       <td>0.2</td>
-      <td>Setosa</td>
+      <td>Iris-setosa</td>
     </tr>
     <tr>
       <th>4</th>
@@ -443,12 +443,12 @@ document.write(`
       <td>3.6</td>
       <td>1.4</td>
       <td>0.2</td>
-      <td>Setosa</td>
+      <td>Iris-setosa</td>
     </tr>
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-9090f132-a7d2-41b1-91a3-afeb95d8294f')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-84109640-53da-4e6d-95e8-2f37bf986946')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -499,12 +499,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-9090f132-a7d2-41b1-91a3-afeb95d8294f button.colab-df-convert');
+          document.querySelector('#df-84109640-53da-4e6d-95e8-2f37bf986946 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-9090f132-a7d2-41b1-91a3-afeb95d8294f');
+          const element = document.querySelector('#df-84109640-53da-4e6d-95e8-2f37bf986946');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -527,15 +527,15 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;variety&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setosa        50
-Versicolor    50
-Virginica     50
-Name: variety, dtype: int64
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iris-setosa        50
+Iris-versicolor    50
+Iris-virginica     50
+Name: class, dtype: int64
 </pre></div>
 </div>
 </div>
@@ -547,9 +547,7 @@ Name: variety, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;sepal.length&#39;, &#39;sepal.width&#39;, &#39;petal.length&#39;, &#39;petal.width&#39;,
-       &#39;variety&#39;],
-      dtype=&#39;object&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;sepal_l&#39;, &#39;sepal_w&#39;, &#39;petal_l&#39;, &#39;petal_w&#39;, &#39;class&#39;], dtype=&#39;object&#39;)
 </pre></div>
 </div>
 </div>
@@ -564,16 +562,16 @@ Name: variety, dtype: int64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">label_dict</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;Setosa&#39;</span><span class="p">,</span>
-           <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;Virginica&#39;</span><span class="p">,</span>
-           <span class="mi">3</span><span class="p">:</span> <span class="s1">&#39;Versicolor&#39;</span><span class="p">}</span>
-<span class="n">feature_dict</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="s1">&#39;sepal.length&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;sepal.width&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;petal.length&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">:</span> <span class="s1">&#39;petal.width&#39;</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">label_dict</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;Iris-Setosa&#39;</span><span class="p">,</span>
+           <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;Iris-Virginica&#39;</span><span class="p">,</span>
+           <span class="mi">3</span><span class="p">:</span> <span class="s1">&#39;Iris-Versicolor&#39;</span><span class="p">}</span>
+<span class="n">feature_dict</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="s1">&#39;sepal_l&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;sepal_w&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;petal_w&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">:</span> <span class="s1">&#39;petal_w&#39;</span><span class="p">}</span>
 
 <span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s1">&#39;seaborn-whitegrid&#39;</span><span class="p">):</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">lab</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;Setosa&#39;</span><span class="p">,</span><span class="s1">&#39;Virginica&#39;</span><span class="p">,</span><span class="s1">&#39;Versicolor&#39;</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">lab</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;Iris-Setosa&#39;</span><span class="p">,</span><span class="s1">&#39;Iris-Virginica&#39;</span><span class="p">,</span><span class="s1">&#39;Iris-Versicolor&#39;</span><span class="p">):</span>
             <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">y</span><span class="o">==</span><span class="n">lab</span><span class="p">,</span> <span class="n">i</span><span class="p">],</span>
                     <span class="n">label</span><span class="o">=</span><span class="n">lab</span><span class="p">,</span>
                     <span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
@@ -587,23 +585,7 @@ Name: variety, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/976a1077659fd3b36c033ff95c1cb1112c2ce6c011bb8064adc0e1280a8a937a.png" src="../_images/976a1077659fd3b36c033ff95c1cb1112c2ce6c011bb8064adc0e1280a8a937a.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_std</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">NameError</span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-7-afc6288d8b52&gt;</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">X_std</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span>
-
-<span class="ne">NameError</span>: name &#39;X_std&#39; is not defined
-</pre></div>
-</div>
+<img alt="../_images/9488eff408b51ff5c8bd4021bce8569f4ad7ce877a42b3f3d314387f23ff74d2.png" src="../_images/9488eff408b51ff5c8bd4021bce8569f4ad7ce877a42b3f3d314387f23ff74d2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -624,10 +606,10 @@ Name: variety, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Covariance Matrix 
-[[ 1.00671141 -0.11835884  0.87760447  0.82343066]
- [-0.11835884  1.00671141 -0.43131554 -0.36858315]
- [ 0.87760447 -0.43131554  1.00671141  0.96932762]
- [ 0.82343066 -0.36858315  0.96932762  1.00671141]]
+[[ 1.00671141 -0.11010327  0.87760486  0.82344326]
+ [-0.11010327  1.00671141 -0.42333835 -0.358937  ]
+ [ 0.87760486 -0.42333835  1.00671141  0.96921855]
+ [ 0.82344326 -0.358937    0.96921855  1.00671141]]
 </pre></div>
 </div>
 </div>
@@ -640,10 +622,10 @@ Name: variety, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Numpy Covariance matrix 
-[[ 1.00671141 -0.11835884  0.87760447  0.82343066]
- [-0.11835884  1.00671141 -0.43131554 -0.36858315]
- [ 0.87760447 -0.43131554  1.00671141  0.96932762]
- [ 0.82343066 -0.36858315  0.96932762  1.00671141]]
+[[ 1.00671141 -0.11010327  0.87760486  0.82344326]
+ [-0.11010327  1.00671141 -0.42333835 -0.358937  ]
+ [ 0.87760486 -0.42333835  1.00671141  0.96921855]
+ [ 0.82344326 -0.358937    0.96921855  1.00671141]]
 </pre></div>
 </div>
 </div>
@@ -661,12 +643,12 @@ Name: variety, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eigenvectors 
-[[ 0.52106591 -0.37741762 -0.71956635  0.26128628]
- [-0.26934744 -0.92329566  0.24438178 -0.12350962]
- [ 0.5804131  -0.02449161  0.14212637 -0.80144925]
- [ 0.56485654 -0.06694199  0.63427274  0.52359713]]
+[[ 0.52237162 -0.37231836 -0.72101681  0.26199559]
+ [-0.26335492 -0.92555649  0.24203288 -0.12413481]
+ [ 0.58125401 -0.02109478  0.14089226 -0.80115427]
+ [ 0.56561105 -0.06541577  0.6338014   0.52354627]]
 Eigenvelues 
-[2.93808505 0.9201649  0.14774182 0.02085386]
+[2.93035378 0.92740362 0.14834223 0.02074601]
 </pre></div>
 </div>
 </div>
@@ -684,12 +666,12 @@ Eigenvelues
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eigenvectors 
-[[ 0.52106591 -0.37741762 -0.71956635  0.26128628]
- [-0.26934744 -0.92329566  0.24438178 -0.12350962]
- [ 0.5804131  -0.02449161  0.14212637 -0.80144925]
- [ 0.56485654 -0.06694199  0.63427274  0.52359713]]
+[[ 0.52237162 -0.37231836 -0.72101681  0.26199559]
+ [-0.26335492 -0.92555649  0.24203288 -0.12413481]
+ [ 0.58125401 -0.02109478  0.14089226 -0.80115427]
+ [ 0.56561105 -0.06541577  0.6338014   0.52354627]]
 Eigenvelues 
-[2.91849782 0.91403047 0.14675688 0.02071484]
+[2.91081808 0.92122093 0.14735328 0.02060771]
 </pre></div>
 </div>
 </div>
@@ -706,12 +688,12 @@ Eigenvelues
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eigenvectors 
-[[ 0.52106591 -0.37741762 -0.71956635  0.26128628]
- [-0.26934744 -0.92329566  0.24438178 -0.12350962]
- [ 0.5804131  -0.02449161  0.14212637 -0.80144925]
- [ 0.56485654 -0.06694199  0.63427274  0.52359713]]
+[[ 0.52237162 -0.37231836 -0.72101681  0.26199559]
+ [-0.26335492 -0.92555649  0.24203288 -0.12413481]
+ [ 0.58125401 -0.02109478  0.14089226 -0.80115427]
+ [ 0.56561105 -0.06541577  0.6338014   0.52354627]]
 Eigenvelues 
-[2.91849782 0.91403047 0.14675688 0.02071484]
+[2.91081808 0.92122093 0.14735328 0.02060771]
 </pre></div>
 </div>
 </div>
@@ -724,10 +706,10 @@ Eigenvelues
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.52106591, -0.37741762,  0.71956635,  0.26128628],
-       [ 0.26934744, -0.92329566, -0.24438178, -0.12350962],
-       [-0.5804131 , -0.02449161, -0.14212637, -0.80144925],
-       [-0.56485654, -0.06694199, -0.63427274,  0.52359713]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.52237162, -0.37231836,  0.72101681,  0.26199559],
+       [ 0.26335492, -0.92555649, -0.24203288, -0.12413481],
+       [-0.58125401, -0.02109478, -0.14089226, -0.80115427],
+       [-0.56561105, -0.06541577, -0.6338014 ,  0.52354627]])
 </pre></div>
 </div>
 </div>
@@ -763,10 +745,10 @@ Eigenvelues
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eigenvalues in descending order:
-2.9184978165319952
-0.9140304714680695
-0.1467568755713151
-0.020714836428618984
+2.9108180837520528
+0.9212209307072249
+0.1473532783050959
+0.020607707235624884
 </pre></div>
 </div>
 </div>
@@ -797,7 +779,7 @@ Eigenvelues
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/16adee83ec87bc071a8a575358a9e3f7a92f43c976534a4e8942a6d1af1cef93.png" src="../_images/16adee83ec87bc071a8a575358a9e3f7a92f43c976534a4e8942a6d1af1cef93.png" />
+<img alt="../_images/5a22adbcf107f11561704526eef1f6315049b8af580666e8b100fb54e2835c85.png" src="../_images/5a22adbcf107f11561704526eef1f6315049b8af580666e8b100fb54e2835c85.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -811,10 +793,10 @@ Eigenvelues
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matrix W:
- [[ 0.52106591 -0.37741762]
- [-0.26934744 -0.92329566]
- [ 0.5804131  -0.02449161]
- [ 0.56485654 -0.06694199]]
+ [[ 0.52237162 -0.37231836]
+ [-0.26335492 -0.92555649]
+ [ 0.58125401 -0.02109478]
+ [ 0.56561105 -0.06541577]]
 </pre></div>
 </div>
 </div>
@@ -845,7 +827,7 @@ Eigenvelues
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0630c50c8ef3f3a639614922165a3c5bebd7b9677d4b63d2a3ff87248b091261.png" src="../_images/0630c50c8ef3f3a639614922165a3c5bebd7b9677d4b63d2a3ff87248b091261.png" />
+<img alt="../_images/4f1199ef4ca92ba2c6ae114328fc703c257e096984580b8c33cacf18affacf43.png" src="../_images/4f1199ef4ca92ba2c6ae114328fc703c257e096984580b8c33cacf18affacf43.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -876,7 +858,7 @@ Eigenvelues
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6bf032ff67981ed3dde0e07eafb2c0bb3629eca07825defdaa0be68e7de2281e.png" src="../_images/6bf032ff67981ed3dde0e07eafb2c0bb3629eca07825defdaa0be68e7de2281e.png" />
+<img alt="../_images/5b400d715a0e45c6dab0607db443a92d7335c64057aae4b1764a767902d71045.png" src="../_images/5b400d715a0e45c6dab0607db443a92d7335c64057aae4b1764a767902d71045.png" />
 </div>
 </div>
 </div>
